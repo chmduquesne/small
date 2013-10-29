@@ -18,6 +18,11 @@
                 <article>
                     {{ article.content }}
                 </article>
+                {% if DISQUS_SITENAME %}
+                <a href="{{ article.url }}#disqus_thread">
+                    To the comments
+                </a>
+                {% endif %}
             {% if loop.length > 1 %}
                 <section id="article-list">
                     <h2>All posts</h2>

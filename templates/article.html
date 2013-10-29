@@ -2,29 +2,33 @@
 {% block title %}{{ article.title|striptags }}{% endblock %}
 {% block content %}
 <section id="content" class="body">
+<header>
+    <h1 class="entry-title">
+        <a href="{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title }}">
+                {{ article.title }}
+        </a>
+    </h1>
+</header>
 <article>
-        <header> <h1 class="entry-title"><a href="{{ article.url }}"
-        rel="bookmark" title="Permalink to {{ article.title }}">{{ article.title
-        }}</a></h1></header>
-        <div class="entry-content">
-        <!-- /.post-info -->
-        {{ article.content }}
-        </div><!-- /.entry-content -->
-        {% if DISQUS_SITENAME %}
-        <div class="comments">
+    <div class="entry-content">
+    {{ article.content }}
+    </div>
+    {% if DISQUS_SITENAME %}
+    <div class="comments">
         <h2>Comments !</h2>
-            <div id="disqus_thread"></div>
-            <script type="text/javascript">
-               var disqus_identifier = "{{ article.url }}";
-               (function() {
-               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-               dsq.src = '//{{ DISQUS_SITENAME }}.disqus.com/embed.js';
-               (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-              })();
-            </script>
+        <!-- hack to add flattr -->
+        <script id='fbnrl3e'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//api.flattr.com/button/view/?uid=chmd&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbnrl3e');</script>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_identifier = "{{ article.url }}";
+            (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//{{ DISQUS_SITENAME }}.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
         </div>
-        {% endif %}
-
+    {% endif %}
 </article>
 </section>
 {% endblock %}
