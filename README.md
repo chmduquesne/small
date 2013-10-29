@@ -7,4 +7,4 @@ This is the theme running [blog.chmd.fr](http://blog.chmd.fr).
 Screenshot
 ----------
 
-[A screenshot](screenshot.png)
+![A screenshot](screenshot.png)
