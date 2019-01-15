@@ -28,13 +28,8 @@
     {% if TAG_FEED_RSS and tag %}
     <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
     {% endif %}
-    <!-- hack to have the css in a relative path -->
-    <!--
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/rdark.css" />
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" />
-    -->
-    <link rel="stylesheet" href="/theme/css/rdark.css" />
-    <link rel="stylesheet" type="text/css" href="/theme/css/{{ CSS_FILE }}" />
+    <link rel="stylesheet" href="theme/css/rdark.css" />
+    <link rel="stylesheet" type="text/css" href="theme/css/{{ CSS_FILE }}" />
     {% endblock head %}
 </head>
 

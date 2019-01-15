@@ -9,7 +9,7 @@
             {# First item #}
             {% if loop.first %}
                 <header>
-                    <h1><a href="{{ SITEURL }}/{{ article.url }}"
+                    <h1><a href="{{ article.url }}"
                             id="page-title">{{ article.title }}</a></h1>
                     {% if not HIDE_DATE %}
                         <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
@@ -30,7 +30,7 @@
             {% endif %}
                 {# other items #}
             {% else %}
-                <li><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a></li>
+                <li><a href="{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a></li>
             {% endif %}
         {% endfor %}
         {% if loop.length > 1 %}
@@ -42,6 +42,6 @@
     {% endif %}
 
     <hr />
-    <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">Atom feed</a></li>
+    <a href="{{ FEED_ALL_ATOM }}">Atom feed</a></li>
 
 {% endblock content %}
