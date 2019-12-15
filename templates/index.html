@@ -23,20 +23,20 @@
                     To the comments
                 </a>
                 {% endif %}
-            {% if loop.length > 1 %}
+                {% if loop.length > 1 %}
                 <section id="article-list">
                     <h2>All posts</h2>
                     <ol>
-            {% endif %}
+                {% endif %}
                 {# other items #}
             {% else %}
                 <li><a href="{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a></li>
             {% endif %}
-        {% endfor %}
-        {% if loop.length > 1 %}
+            {% if loop.last and loop.length > 1 %}
             </ol>
             </section><!-- #article-list -->
-        {% endif %}
+            {% endif %}
+        {% endfor %}
     {% else %}
         No posts found.
     {% endif %}
